@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Lift - Team</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/team.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- fontawasome css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind css script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-logo">
+          <a href="index.html"><img src="/img/logo.png" alt="Logo"></a>
+        </div>
+        <div class="navbar-brand">
+          <a href="index.html" class="text-gray-900 hover:text-gray-400 font-bold text-xl mx-4">Quantum Lift</a>
+        </div>
+        <div class="navbar-links hidden md:flex">
+          <a href="index.html" class="text-gray-900 hover:text-gray-400 mx-4">Home</a>
+          <a href="#" class="text-gray-900 hover:text-gray-400 mx-4">About</a>
+          <a href="#" class="text-gray-900 hover:text-gray-400 mx-4">Services</a>
+          <a href="index.html" class="text-gray-900 hover:text-gray-400 mx-4">Contact</a>
+        </div>
+        <div class="navbar-button hidden md:block">
+          <button class="border-2 border-black bg-transparent text-black hover:border-black hover:bg-black hover:text-white font-bold py-2 px-4 rounded" onclick="showContactPopup()">
+            Contact Now <i class="fa-solid fa-phone"></i>
+          </button>
+        </div>
+        <div class="md:hidden">
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="focus:outline-none">
+            <svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <!-- Mobile menu items -->
+          <div id="mobile-menu-container" class="mobile-menu-container">
+            <button id="close-button" class="focus:outline-none absolute top-4 right-4">
+              <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+              </svg>
+            </button>
+            <div class="components flex flex-col items-center justify-center mt-20">
+              <a href="index.html" class="block text-black py-2 px-4">Home</a>
+              <a href="#" class="block text-black py-2 px-4">About</a>
+              <a href="#" class="block text-black py-2 px-4">Services</a>
+              <a href="#" class="block text-black py-2 px-4">Contact</a>
+              <button class="border-2 border-black bg-black text-white hover:border-black hover:bg-transparent hover:text-black font-bold py-2 px-4 rounded mt-4" onclick="showContactPopup()">
+                Contact Now <i class="fa-solid fa-phone"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Contact Popup -->
+    <div id="contact-popup" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center">
+        <div class="contact-options bg-white rounded-lg p-8">
+          <button class="ml-40 focus:outline-none" onclick="hideContactPopup()">
+            <i class="fa-solid fa-close"></i>
+          </button>
+          <h2 class="text-2xl font-bold mb-6">Contact Options</h2>
+          <ul class="contact-list">
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER" class="contact-item flex items-center mb-4">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Contact on WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="tel:9824565880" class="contact-item flex items-center mb-4">
+                <i class="fas fa-phone mr-2"></i>
+                Call Now
+              </a>
+            </li>
+            <li>
+              <a href="mailto:YOUR_EMAIL" class="contact-item flex items-center mb-4">
+                <i class="fas fa-envelope mr-2"></i>
+                Email Us
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/YOUR_INSTAGRAM" class="contact-item flex items-center mb-4">
+                <i class="fab fa-instagram mr-2"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/YOUR_FACEBOOK" class="contact-item flex items-center mb-4">
+                <i class="fab fa-facebook mr-2"></i>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/YOUR_YOUTUBE" class="contact-item flex items-center mb-4">
+                <i class="fab fa-youtube mr-2"></i>
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com/YOUR_TWITTER" class="contact-item flex items-center mb-4">
+                <i class="fab fa-twitter mr-2"></i>
+                Twitter
+              </a>
+            </li>
+          </ul>
+    
+        </div>
+    </div>   
+      
+    <!-- team page -->
+
+    <div id="team" class="container mx-auto">
+        <div class="team-member bg-gray-100 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image1.jpg" alt="Team Member 1" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 1</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <div class="team-member bg-gray-200 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image2.jpg" alt="Team Member 2" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 2</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <div class="team-member bg-gray-200 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image2.jpg" alt="Team Member 2" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 2</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <div class="team-member bg-gray-200 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image2.jpg" alt="Team Member 2" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 2</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <div class="team-member bg-gray-200 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image2.jpg" alt="Team Member 2" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 2</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <div class="team-member bg-gray-200 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image2.jpg" alt="Team Member 2" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 2</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <div class="team-member bg-gray-200 p-8 rounded-lg flex flex-col md:flex-row md:items-center">
+            <div class="md:w-1/2 md:order-2">
+                <img src="path/to/image2.jpg" alt="Team Member 2" class="rounded-full mx-auto md:mx-0 md:mr-4">
+            </div>
+            <div class="md:w-1/2 md:order-1">
+                <h2 class="text-4xl font-bold mb-4">Team Member 2</h2>
+                <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dolor eu diam
+                    bibendum,
+                    sit amet sollicitudin turpis interdum. Quisque efficitur viverra diam ac accumsan.</p>
+            </div>
+        </div>
+        <!-- Add more team members here -->
+    </div>
+
+    <div class="scroll-indicator__bg">
+        <div class="scroll-indicator__dot"></div>
+        <div class="scroll-indicator__line"></div>
+        <div class="scroll-indicator__dot"></div>
+        <div class="scroll-indicator__line"></div>
+        <div class="scroll-indicator__dot"></div>
+        <div class="scroll-indicator__line"></div>
+        <div class="scroll-indicator__dot"></div>
+        <div class="scroll-indicator__line"></div>
+        <div class="scroll-indicator__dot"></div>
+        <!-- Add more dots and lines for additional team members -->
+    </div>
+      
+
+    <!-- script -->
+
+    <script src="/javascript/navbar.js"></script>
+    <script src="/javascript/team.js"></script>
+    
+</body>
+</html>

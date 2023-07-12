@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
+  <meta name="msapplication-config" content="path/to/browserconfig.xml">
+
+  <title>Quantum Lift</title>
+
+  <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+
+  <!-- all css -->
+
+  <!-- main css -->
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/feedback-slider.css">
+  <link rel="stylesheet" href="/css/test.css">
+  <link rel="stylesheet" href="/css/slider.css">
+  <!-- fontawasome css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.css" integrity="sha512-3OuH/9eh0Sx9s/c23ZFG5SJb3GvBluF9cdGgQXhZyMyId4GP87W9QBgkHmocx+8kZaCZmXQUUuLOD4Q4f5PaWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- all script -->
+
+  <!-- tailwind css script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+
+</head>
+<body>
+  
+  <nav class="navbar" id="navbar">
+    <div class="navbar-logo">
+      <a href="index.html"><img src="/img/logo.png" alt="Logo"></a>
+    </div>
+    <div class="navbar-brand">
+      <a href="index.html" class="text-gray-900 hover:text-gray-400 font-bold text-xl mx-4">Quantum Lift</a>
+    </div>
+    <div class="navbar-links hidden md:flex">
+      <a href="#home" class="active text-gray-900 hover:text-gray-200 mx-4">Home</a>
+      <a href="#about" class="text-gray-900 hover:text-gray-200 mx-4">About</a>
+      <a href="#services" class="text-gray-900 hover:text-gray-200 mx-4">Services</a>
+      <a href="#whyus" class="text-gray-900 hover:text-gray-200 mx-4">Why us</a>
+    </div>
+    <div class="navbar-button hidden md:block">
+      <button class="border-2 border-black bg-transparent text-black hover:border-black hover:bg-black hover:text-white font-bold py-2 px-4 rounded" onclick="showContactPopup()">
+        Contact Now <i class="fa-solid fa-phone"></i>
+      </button>
+    </div>
+    <div class="md:hidden">
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="focus:outline-none">
+        <svg class="w-6 h-6 text-gray-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <!-- Mobile menu items -->
+      <div id="mobile-menu-container" class="mobile-menu-container">
+        <button id="close-button" class="focus:outline-none absolute top-4 right-4">
+          <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+          </svg>
+        </button>
+        <div class="components flex flex-col items-center justify-center mt-20">
+          <a href="index.html" class="block text-black py-2 px-4">Home</a>
+          <a href="#about" class="block text-black py-2 px-4">About</a>
+          <a href="#" class="block text-black py-2 px-4">Services</a>
+          <a href="#" class="block text-black py-2 px-4">Contact</a>
+          <button class="border-2 border-black bg-black text-white hover:border-black hover:bg-transparent hover:text-black font-bold py-2 px-4 rounded mt-4" onclick="showContactPopup()">
+            Contact Now <i class="fa-solid fa-phone"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Contact Popup -->
+  <div id="contact-popup" class="contact-popup hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <div class="contact-options bg-white rounded-lg p-8">
+      <button class="ml-40 focus:outline-none" onclick="hideContactPopup()">
+        <i class="fa-solid fa-close"></i>
+      </button>
+      <h2 class="text-2xl font-bold mb-6">Contact Options</h2>
+      <ul class="contact-list ">
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fab fa-whatsapp mr-2"></i>
+            On WhatsApp
+          </a>
+        </li>
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="tel:9824565880" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fas fa-phone mr-2"></i>
+            Call Now
+          </a>
+        </li>
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="mailto:YOUR_EMAIL" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fas fa-envelope mr-2"></i>
+            Email Us
+          </a>
+        </li>
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="https://www.instagram.com/YOUR_INSTAGRAM" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fab fa-instagram mr-2"></i>
+            Instagram
+          </a>
+        </li>
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="https://www.facebook.com/YOUR_FACEBOOK" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fab fa-facebook mr-2"></i>
+            Facebook
+          </a>
+        </li>
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="https://www.youtube.com/YOUR_YOUTUBE" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fab fa-youtube mr-2"></i>
+            YouTube
+          </a>
+        </li>
+        <li class="hover:bg-black hover:rounded-lg hover:text-white">
+          <a href="https://www.twitter.com/YOUR_TWITTER" class="hover:ml-2 hover:mr-2 hover:text-lg contact-item flex items-center mb-4">
+            <i class="fab fa-twitter mr-2"></i>
+            Twitter
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>   
+
+  <!-- hero section -->
+<div class="" id="home"></div>
+  <div class="hero-section relative" id="hero-section">
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-black">
+      <h1 class="text-5xl font-bold">Garden, Forest, Farms Consultancy</h1>
+      <p class="text-xl mt-4">Unlock the potential of nature with our expert guidance.</p>
+      <div class="mt-8 button-container flex flex-wrap justify-center">
+        <a href="#" class="border-2 border-black bg-black text-white hover:border-black hover:bg-transparent hover:text-black font-bold py-3 px-6 rounded-full transition-colors duration-300 mb-2 sm:mb-0 sm:mr-4">Our Projects <i class="fa-solid fa-chevron-right ml-2"></i></a>
+        <a href="#" class="border-2 border-black bg-transparent text-black hover:bg-black hover:text-white font-bold py-3 px-6 rounded-full transition-colors duration-300">Counsel Now <i class="fa-solid fa-chevron-right ml-2"></i></a>
+      </div>
+      <div class="text-gray-600 text-sm mt-4">
+        <span class="font-bold">10k+</span> projects and more added regularly&nbsp;&nbsp;&nbsp;
+        <span class="font-bold">50%</span> completion rate&nbsp;&nbsp;&nbsp;
+        <span class="font-bold">100M+</span> satisfied clients
+      </div>
+    </div>
+    <div class="social-icons absolute bottom-4 right-4">
+      <a href="#" class="text-black mr-2 hover:text-gray-700"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" class="text-black mr-2 hover:text-gray-700"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" class="text-black mr-2 hover:text-gray-700"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" class="text-black mr-2 hover:text-gray-700"><i class="fab fa-youtube fa-lg"></i></a>
+    </div>
+  </div>  
+  
+  <a href="https://api.whatsapp.com/send?phone=1234567890" class="whatsapp-icon" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- about us -->
+  
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap items-center -mx-4">
+        <!-- Image Column -->
+        <div class="w-full md:w-1/2 px-4 mb-8">
+          <img src="/demo.png" alt="About Us" class="rounded-lg shadow-lg mx-auto max-w-full h-auto">
+        </div>
+        <!-- Text Column -->
+        <div class="w-full md:w-1/2 px-4 mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Who We Are</h2>
+          <p class="text-gray-700 leading-loose">Quantum Lift is a leading consultancy firm specializing in forest, garden, and farm management. With over 15 years of experience, we have built a reputation for providing exceptional services to individuals, businesses, and organizations across the globe.</p>
+          <p class="text-gray-700 leading-loose mt-4">At Quantum Lift, our mission is to promote sustainable practices and help our clients achieve their goals while preserving the environment. We believe that by combining our expertise with innovative solutions, we can create a positive impact on the land and the community.</p>
+          <a href="/services" class="inline-block mt-6 px-6 py-3 border-2 border-black bg-transparent text-black hover:border-black hover:bg-black hover:text-white font-semibold rounded-lg transition duration-200 flex items-center">
+            <span class="mr-2">Explore Our Services</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>  
+  
+  <!-- Our Services -->
+
+  <section id="services" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-gray-800 rounded-xl shadow-lg p-6 text-center">
+          <i class="fas fa-tree fa-3x text-green-400 mb-4"></i>
+          <h3 class="text-xl font-semibold text-white mb-2">Forest Management</h3>
+          <p class="text-gray-300">We offer comprehensive forest management solutions to preserve and enhance forest ecosystems.</p>
+        </div>
+        <!-- Service 2 -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+          <i class="fas fa-seedling fa-3x text-green-400 mb-4"></i>
+          <h3 class="text-xl font-semibold text-white mb-2">Garden Design</h3>
+          <p class="text-gray-300">Transform your outdoor space with our expert garden design and landscaping services.</p>
+        </div>
+        <!-- Service 3 -->
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+          <i class="fas fa-tractor fa-3x text-green-400 mb-4"></i>
+          <h3 class="text-xl font-semibold text-white mb-2">Farm Consultancy</h3>
+          <p class="text-gray-300">Maximize productivity and sustainability with our farm management and consultancy services.</p>
+        </div>
+        <!-- Add more services as needed -->
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Why us! -->
+
+  <section class="py-16 bg-gray-100" id="whyus">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">Why Choose Quantum Lift</h2>
+      <div class="flex flex-wrap items-center -mx-4">
+        <!-- Item 1: Expert Team -->
+        <div class="w-full md:w-1/2 px-4 mb-8" data-aos="fade-right" data-aos-delay="100">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 3.72a1.98 1.98 0 00-1.41.59L3.72 8A2 2 0 005 10h10a2 2 0 001.42-3.42l-4.88-4.29A1.98 1.98 0 0010 3.72zM4 12a1 1 0 011-1h2a1 1 0 110 2H5a1 1 0 01-1-1zm5 1a1 1 0 100 2h3a1 1 0 100-2H9zm-5 3a1 1 0 011-1h2a1 1 0 110 2H5a1 1 0 01-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-semibold text-gray-800">Expert Team</h3>
+              <p class="text-gray-600 mt-2">Our team of experienced consultants is passionate about sustainable forestry, gardening, and farming practices. They bring extensive knowledge and expertise to help you achieve your goals.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2: Custom Solutions -->
+        <div class="w-full md:w-1/2 px-4 mb-8" data-aos="fade-left" data-aos-delay="100">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M2 5a3 3 0 013-3h10a3 3 0 013 3v8a3 3 0 01-3 3H5a3 3 0 01-3-3V5zm3-2a1 1 0 00-1 1v1h12V4a1 1 0 00-1-1H5zm1 5h8a1 1 0 010 2H6a1 1 0 010-2zm0 4h4a1 1 0 010 2H6a1 1 0 010-2zm0 4h8a1 1 0 010 2H6a1 1 0 010-2z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-semibold text-gray-800">Custom Solutions</h3>
+              <p class="text-gray-600 mt-2">We understand that each project is unique, so we tailor our consultancy services to meet your specific needs. Our team will work closely with you to develop customized solutions that align with your goals and budget.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3: Sustainable Practices -->
+        <div class="w-full md:w-1/2 px-4 mb-8" data-aos="fade-right" data-aos-delay="100">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm4.95 9.03l-4.95 4.95a1 1 0 01-1.41 0l-4.95-4.95A6 6 0 1114.95 11.03zM10 4a1 1 0 100 2 2 2 0 012 2h1a4 4 0 00-4-4zM6.41 8.59a1 1 0 011.42 0L10 10.17l2.17-2.18a1 1 0 011.42 1.42L11.41 12l2.18 2.17a1 1 0 01-1.42 1.42L10 13.41l-2.17 2.18a1 1 0 01-1.42-1.42L8.59 12 6.41 9.83a1 1 0 010-1.42z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-semibold text-gray-800">Sustainable Practices</h3>
+              <p class="text-gray-600 mt-2">At Quantum Lift, we are committed to promoting sustainable and environmentally friendly practices. We strive to help you create and maintain forests, gardens, and farms that are not only productive but also preserve the natural ecosystem.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4: Client Success -->
+        <div class="w-full md:w-1/2 px-4 mb-8" data-aos="fade-left" data-aos-delay="100">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 2a8 8 0 00-8 8c0 1.842.634 3.537 1.687 4.875l-1.406 1.438 1.406 1.438 3.938-3.938A6.95 6.95 0 0010 16a6.95 6.95 0 01-09-08-09-08 0 3.5 3.5 0 006.5 0 6.95 6.95 0 003.938-3.938l3.938 3.938 1.406-1.438-1.406-1.438A7.959 7.959 0 0020 10c0-4.418-3.582-8-8-8zm0-2C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0zm2 14h2v2h-2v-2zm0-6h2v4h-2v-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-semibold text-gray-800">Client Success</h3>
+              <p class="text-gray-600 mt-2">We measure our success by the success of our clients. We are proud to have helped numerous individuals, businesses, and organizations achieve their forest, garden, and farm goals. Let us bring that success to your project too.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Our Agro Services</h2>
+        <hr class="border-t-2 border-gray-300 mx-auto mb-8 md:w-1/4">
+    <div class="slider-container relative">
+        <div id="slider" class="slider flex ">
+            <!-- Slide 1 -->
+            <div class="slide flex items-center justify-center animate__animated animate__fadeIn">
+                <img src="demo.png" alt="Project 1" class="slide-image rounded-3xl">
+                <div class="slide-content text-black ml-6">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">Garden Plantation</h3>
+                    <p class="text-xl md:text-2xl">Transform your space into a vibrant oasis with our expert garden plantation services. We specialize in creating stunning and sustainable gardens tailored to your preferences. Our team of skilled horticulturists will design and implement beautiful landscapes that enhance the aesthetics of your property.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide flex items-center justify-center animate__animated animate__fadeIn">
+                <img src="demo.png" alt="Project 2" class="slide-image rounded-3xl">
+                <div class="slide-content text-black ml-6">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">Farm Services</h3>
+                    <p class="text-xl md:text-2xl">Experience high-quality farm services designed to optimize your agricultural operations. Our team of experts is equipped with the knowledge and tools to assist you in various aspects of farming, including soil testing, crop selection, irrigation systems, and pest control. We strive to increase productivity and profitability while implementing sustainable farming practices.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide flex items-center justify-center animate__animated animate__fadeIn">
+                <img src="demo.png" alt="Project 3" class="slide-image rounded-3xl">
+                <div class="slide-content text-black ml-6">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">Miyawaki Plantation</h3>
+                    <p class="text-xl md:text-2xl">Embark on a journey of ecological restoration with our Miyawaki plantation services. By employing the pioneering Miyawaki method, we create dense, native forests in small areas to promote biodiversity and combat deforestation. Our team of ecological experts will guide you through the process and help you establish sustainable green spaces that contribute to a healthier environment.</p>
+                </div>
+            </div>
+
+            <!-- Add more slides as needed -->
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="slider-navigation absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full">
+            <button id="prevBtn" class="slider-nav-btn text-black"><i class="fa-solid fa-circle-chevron-left fa-2xl"></i></button>
+            <button id="nextBtn" class="slider-nav-btn text-black"><i class="fa-solid fa-circle-chevron-right fa-2xl"></i></button>
+        </div>
+    </div>
+</div>
+</section>
+
+  <!-- meet our team -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap items-center -mx-4">
+        <!-- Text Column -->
+        <div class="w-full md:w-1/2 px-4 mb-8">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Expert Consultants</h2>
+          <p class="text-gray-700 leading-loose">At Quantum Lift, we have a team of highly skilled and dedicated consultants who are passionate about forestry, gardening, and farming. With their deep knowledge and experience, our consultants provide expert advice and guidance to our clients.</p>
+          <p class="text-gray-700 leading-loose mt-4">We pride ourselves on having a diverse team that specializes in various areas such as sustainable forestry practices, organic gardening techniques, and advanced farm management strategies. Our consultants work closely with our clients to understand their unique needs and provide tailored solutions to help them achieve their goals.</p>
+          <a href="team.html" class="inline-block mt-6 px-6 py-3 bg-blue-500 xt-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200">Meet Our Team <i class="fa-solid fa-people-group"></i></a>
+        </div>
+        <!-- Image Column -->
+        <div class="w-full md:w-1/2 px-4 mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-64 w-64 text-green-500 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm4.95 9.03l-4.95 4.95a1 1 0 01-1.41 0l-4.95-4.95A6 6 0 1114.95 11.03zM10 4a1 1 0 100 2 2 2 0 012 2h1a4 4 0 00-4-4zM6.41 8.59a1 1 0 011.42 0L10 10.17l2.17-2.18a1 1 0 011.42 1.42L11.41 12l2.18 2.17a1 1 0 01-1.42 1.42L10 13.41l-2.17 2.18a1 1 0 01-1.42-1.42L8.59 12 6.41 9.83a1 1 0 010-1.42z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- counsel now -->
+
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-center -mx-4">
+        <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">New Idea Counsel Now</h2>
+          <p class="text-gray-600 leading-loose">Have a new idea or need expert advice? Our team of consultants is ready to help. Contact us now to discuss your project and explore innovative solutions tailored to your needs.</p>
+          <div class="flex justify-center mt-6">
+            <a href="https://www.facebook.com/quantumlift" target="_blank" class="text-gray-600 hover:text-gray-800 transition duration-200 mx-2">
+              <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+            <a href="https://www.twitter.com/quantumlift" target="_blank" class="text-gray-600 hover:text-gray-800 transition duration-200 mx-2">
+              <i class="fa-brands fa-twitter fa-2xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/quantumlift" target="_blank" class="text-gray-600 hover:text-gray-800 transition duration-200 mx-2">
+              <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/quantumlift" target="_blank" class="text-gray-600 hover:text-gray-800 transition duration-200 mx-2">
+              <i class="fa-brands fa-youtube fa-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 px-4">
+          <div class="flex justify-center md:justify-end">
+            <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-200">
+              <i class="fa-brands fa-whatsapp mr-2 fa-xl"></i> Contact on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- F&Q section -->
+
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Question 1 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">What services do you offer?</h3>
+          <p class="text-gray-600">We offer a range of services including forest management, garden design, and farm consultancy. Our team of experts is dedicated to providing sustainable solutions tailored to your needs.</p>
+        </div>
+        <!-- Question 2 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">How can I contact your team?</h3>
+          <p class="text-gray-600">You can reach our team by email at info@quantumlift.com or by phone at 123-456-7890. We are available to answer any questions or provide further information about our services.</p>
+        </div>
+        <!-- Quistion 3 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">How can I contact your team?</h3>
+          <p class="text-gray-600">You can reach our team by email at info@quantumlift.com or by phone at 123-456-7890. We are available to answer any questions or provide further information about our services.</p>
+        </div>
+        <!-- Quistion 4 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">How can I contact your team?</h3>
+          <p class="text-gray-600">You can reach our team by email at info@quantumlift.com or by phone at 123-456-7890. We are available to answer any questions or provide further information about our services.</p>
+        </div>
+        <!-- Quistion 5 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">How can I contact your team?</h3>
+          <p class="text-gray-600">You can reach our team by email at info@quantumlift.com or by phone at 123-456-7890. We are available to answer any questions or provide further information about our services.</p>
+        </div>
+        <!-- Quistion 6 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">How can I contact your team?</h3>
+          <p class="text-gray-600">You can reach our team by email at info@quantumlift.com or by phone at 123-456-7890. We are available to answer any questions or provide further information about our services.</p>
+        </div>
+      </div>
+      <!-- <div class="text-center mt-8">
+        <a href="#" class="inline-block px-6 py-3 border-2 border-black text-black font-bold font-semibold rounded-lg hover:bg-black hover:text-white transition duration-200">More Questions </a>
+      </div> -->
+    </div>
+  </section>
+  
+  
+
+  <!-- footer -->
+
+  <footer class="bg-gray-800 text-white">
+    <div class="container mx-auto px-4 py-8">
+      <div class="flex flex-wrap items-center justify-center">
+        <div class="w-full md:w-auto mb-4 md:mb-0">
+          <h3 class="text-xl font-bold"> Quantum Lift</h3>
+        </div>
+        <div class="w-full md:flex-grow md:text-center">
+          <p class="text-gray-400">1234 Main Street, City</p>
+          <p class="text-gray-400">info@quantumlift.com</p>
+          <p class="text-gray-400">123-456-7890</p>
+        </div>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+          <ul class="flex justify-center md:justify-end space-x-4">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-200">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-200">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-200">
+                <i class="fa-brands fa-instagram fa"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-200">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-gray-400 text-sm">&copy; 2023 Quantum Lift. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>  
+  
+
+  <!--script  -->
+
+  <script src="/javascript/navbar.js"></script>
+  <script src="/javascript/hero.js"></script>
+  <script src="/javascript/feedback-slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/javascript/test.js"></script>
+  <script src="/javascript/imgslider.js"></script>
+  <script src="/javascript/slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js" integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
