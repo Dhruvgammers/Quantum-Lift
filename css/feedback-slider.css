@@ -1,0 +1,37 @@
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .slide {
+  flex-direction: column;
+  text-align: center;
+  }
+  .slide-image {
+    margin-bottom: 1rem;
+}
+
+.slide-content {
+    margin-left: 0;
+}
+}
+  
+ /* Tablet Styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .slide-content {
+  margin-left: 1rem;
+  }
+  }
+  
+  /* TV Styles */
+  @media (min-width: 1025px) and (max-width: 1920px) {
+  .slide-content {
+  margin-left: 2rem;
+  }
+  }
+  
+  /* PC Styles */
+  @media (min-width: 1921px) {
+  .slide-content {
+  margin-left: 4rem;
+  }
+  }
+
+

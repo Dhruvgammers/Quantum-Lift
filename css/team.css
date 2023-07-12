@@ -1,0 +1,52 @@
+.team-member {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .scroll-indicator {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+  }
+  
+  .scroll-indicator__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-indicator__dot.active {
+    opacity: 1;
+  }
+  
+  .scroll-indicator__line {
+    width: 3px;
+    height: 10vh;
+    background-color: rgb(175, 175, 175);
+    margin-left: 3px;
+  }
+  
+  .scroll-indicator__line.active {
+    background-color: black;
+  }
+  
+  .scroll-indicator__bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+  
